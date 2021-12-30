@@ -77,3 +77,25 @@ def user_check(user_input=str):
             
 user_check(user_ask_main)    
 
+---------------------------------------------------------------------------------------------------------
+import random , sys
+user_int = input("Enter User Acc: ")
+def pass_gen2(y, user_int):   
+        numbers = ("0","1","2","3","4","5","6","7","8","9","0","!","'","+","?","*","&","/","*","-","^","<", ">")        
+        answer = "".join(random.choice(numbers) for s in range(y))
+        if len(user_int) >= 12 and len(user_int) <= 20 and all(x.isalpha() for x in user_int):
+            return answer
+        else:
+            sys.exit("Please min 12, max 20 char and only str")
+            
+
+for i in range(1):
+            randoms = [12,13,14,15,16,17,18,19,20] 
+            user = pass_gen2(random.choice(randoms), user_int=user_int)
+            print(user)        
+            again_pass = input("please again your pass: ")
+            if again_pass == user:
+                print("welcome " + user_int)
+            else:
+                print("It's not your password, try again!")
+
