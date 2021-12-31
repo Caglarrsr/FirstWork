@@ -99,3 +99,34 @@ for i in range(1):
             else:
                 print("It's not your password, try again!")
 
+---------------------------------------------------------------------------------------------------------------
+
+
+import random , sys
+import string , os
+users = input("Enter User Name: ")
+password =  "".join(random.choice(string.hexdigits) for x in range(random.randint(7, 14)))
+if len(users) <= 16 and len(users) >= 8:
+    print("Your password is: " + password)
+else:
+    sys.exit("Please min8, max 16 char")
+    
+s = input("Do you want to continue? Y/N ")
+if s == "Y" or s == "y":
+    k = input("Cool! Please take your password here: ")
+    
+elif s != "Y" or s != "y":
+    sys.exit("Okay, goodbye!")        
+        
+if k == password:
+    print("Nice! Welcome " + users)
+
+elif k != password:
+       sys.exit("It's not your password, please try again..")
+    
+p = input("Can you go to the cmd panel? Y/N ")
+if p == "Y" or p =="y":
+    os.system("start cmd ")
+    
+elif s != "Y" or s != "y":
+    print("Oke, bye")
